@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BD51FAF-8FE5-4ECC-87ED-0C77E8A1D2B0}</ProjectGuid>
+    <ProjectGuid>{2F2EBD31-76A6-4A15-BD73-4B362750C673}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>General.Service.Implement</RootNamespace>
-    <AssemblyName>General.Service.Implement</AssemblyName>
+    <RootNamespace>General.Web.TestExtensions</RootNamespace>
+    <AssemblyName>General.Web.TestExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,6 +34,7 @@
       <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,33 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappings\ServiceProfile.cs" />
-    <Compile Include="MemberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\General.Model\General.Model.csproj">
-      <Project>{e92d501d-2289-41af-9b10-ecfdb394b68e}</Project>
-      <Name>General.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\General.Repository.Interface\General.Repository.Interface.csproj">
-      <Project>{8cd14997-93ab-466a-9a85-9d84b8ff1335}</Project>
-      <Name>General.Repository.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\General.Service.Interface\General.Service.Interface.csproj">
-      <Project>{e4747ff9-f65f-4b47-99a0-189be3db8fb3}</Project>
-      <Name>General.Service.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\General.Service.ParameterDto\General.Service.ParameterDto.csproj">
-      <Project>{8e7941c6-bfe9-4ebf-b38f-dc1b5e18662c}</Project>
-      <Name>General.Service.ParameterDto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\General.Service.Validation\General.Service.Validation.csproj">
-      <Project>{ee265f14-30a0-4857-9f8b-deb9ad522c9a}</Project>
-      <Name>General.Service.Validation</Name>
+    <ProjectReference Include="..\General.Service.Implement\General.Service.Implement.csproj">
+      <Project>{3bd51faf-8fe5-4ecc-87ed-0c77e8a1d2b0}</Project>
+      <Name>General.Service.Implement</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using General.Service.ParameterDto;
 
 namespace General.Service.Validation.Decorators
 {
@@ -16,6 +17,8 @@ namespace General.Service.Validation.Decorators
             this.MemberService = memberService;
         }
 
-        public abstract bool IsExist(string name, string email, int age);
+        public abstract bool IsExist(string name, string email);
+
+        public abstract bool SaveMember(MemberParameterDto parameter);
     }
 }

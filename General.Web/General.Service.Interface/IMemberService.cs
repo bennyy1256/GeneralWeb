@@ -1,4 +1,5 @@
-﻿using System;
+﻿using General.Service.ParameterDto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,14 @@ namespace General.Service.Interface
         /// </summary>
         /// <param name="name"></param>
         /// <param name="email"></param>
-        /// <param name="age"></param>
         /// <returns></returns>
-        bool IsExist(string name, string email, int age);
+        bool IsExist(string name, string email);
+
+        /// <summary>
+        /// Save Member.
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        bool SaveMember(MemberParameterDto parameter);
     }
 }

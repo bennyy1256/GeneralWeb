@@ -50,12 +50,16 @@
     <Compile Include="ParameterValidate\Validation.cs" />
     <Compile Include="ParameterValidate\ValidationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validators\MemberValidator.cs" />
+    <Compile Include="Validators\MemberParameterDtoValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\General.Service.Interface\General.Service.Interface.csproj">
       <Project>{e4747ff9-f65f-4b47-99a0-189be3db8fb3}</Project>
       <Name>General.Service.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General.Service.ParameterDto\General.Service.ParameterDto.csproj">
+      <Project>{8e7941c6-bfe9-4ebf-b38f-dc1b5e18662c}</Project>
+      <Name>General.Service.ParameterDto</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

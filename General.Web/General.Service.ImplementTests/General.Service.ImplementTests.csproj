@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ExpectedObjects, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExpectedObjects.1.2.3\lib\net40\ExpectedObjects.dll</HintPath>
       <Private>True</Private>
@@ -75,8 +79,17 @@
   <ItemGroup>
     <Compile Include="MemberServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHooks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\General.Model\General.Model.csproj">
+      <Project>{e92d501d-2289-41af-9b10-ecfdb394b68e}</Project>
+      <Name>General.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General.Repository.Interface\General.Repository.Interface.csproj">
+      <Project>{8cd14997-93ab-466a-9a85-9d84b8ff1335}</Project>
+      <Name>General.Repository.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\General.Service.Implement\General.Service.Implement.csproj">
       <Project>{3BD51FAF-8FE5-4ECC-87ED-0C77E8A1D2B0}</Project>
       <Name>General.Service.Implement</Name>
@@ -84,6 +97,10 @@
     <ProjectReference Include="..\General.Service.Interface\General.Service.Interface.csproj">
       <Project>{e4747ff9-f65f-4b47-99a0-189be3db8fb3}</Project>
       <Name>General.Service.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General.Service.ParameterDto\General.Service.ParameterDto.csproj">
+      <Project>{8E7941C6-BFE9-4EBF-B38F-DC1B5E18662C}</Project>
+      <Name>General.Service.ParameterDto</Name>
     </ProjectReference>
     <ProjectReference Include="..\General.Service.Validation\General.Service.Validation.csproj">
       <Project>{ee265f14-30a0-4857-9f8b-deb9ad522c9a}</Project>
