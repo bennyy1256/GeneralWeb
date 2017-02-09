@@ -153,10 +153,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\SignUpViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,11 +230,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Member\SignUp.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GenderDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Resource\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -240,6 +244,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\General.Common.Enum\General.Common.Enum.csproj">
+      <Project>{001979a4-377f-4049-9d55-ec355b77c489}</Project>
+      <Name>General.Common.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General.Common.Extension\General.Common.Extension.csproj">
+      <Project>{8155419d-7b66-4ee3-b737-1768c9ecc9df}</Project>
+      <Name>General.Common.Extension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\General.Resource\General.Resource.csproj">
       <Project>{3c5bfaba-890e-4796-87d2-2b734e51f5b0}</Project>
       <Name>General.Resource</Name>

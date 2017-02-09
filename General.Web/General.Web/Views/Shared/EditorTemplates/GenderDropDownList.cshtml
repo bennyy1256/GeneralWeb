@@ -1,0 +1,16 @@
+﻿@using General.Common.Extension
+@model General.Common.Enum.GenderEnum
+<div class="form-group">
+    <label for="" class="col-sm-5 control-label text-left">
+        
+    </label>
+    <div class="col-sm-7">
+        @Html.DropDownListForShowableEnumDesc(
+            x => x,
+            new { @class = "form-control" },
+            new Dictionary<string, string>(){
+                { "-1", "All"},
+                { "-10", "All10"}
+            })
+    </div>
+</div>
