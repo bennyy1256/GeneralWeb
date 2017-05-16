@@ -79,12 +79,12 @@ namespace General.Service.Implement.Tests
         [Owner("Benny")]
         [TestCategory("MemberService")]
         [TestProperty("MemberService", "SaveMember")]
-        public void SaveMember_Input_parameter_ShouldReturn_True()
+        public void SaveMember_Input_MemberParameterDto_SaveDataSucess_ShouldReturn_True()
         {
             // arrange
             var parameter = new MemberParameterDto()
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid().ToString(),
                 Name = "Tom",
                 Email = "TOM@GMAIL.COM",
                 Password = "EF54AEF83A3F",
@@ -92,7 +92,7 @@ namespace General.Service.Implement.Tests
             };
 
             this.MemberRepository.Save(Arg.Any<MemberModel>()).ReturnsForAnyArgs(true);
-            //Mapper.Initialize(x => x.AddProfile<ServiceProfile>());
+            
             var sut = this.GetSystemUnderTest();
 
             // act
@@ -100,6 +100,33 @@ namespace General.Service.Implement.Tests
 
             // assert
             actual.Should().BeTrue();
+        }
+
+        [TestMethod()]
+        [Owner("Benny")]
+        [TestCategory("MemberService")]
+        [TestProperty("MemberService", "SaveMember")]
+        public void SaveMember_Input_MemberParameterDto_SaveDataFail_ShouldReturn_False()
+        {
+            // arrange
+            var parameter = new MemberParameterDto()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Tom",
+                Email = "TOM@GMAIL.COM",
+                Password = "EF54AEF83A3F",
+                Age = 21
+            };
+
+            this.MemberRepository.Save(Arg.Any<MemberModel>()).ReturnsForAnyArgs(false);
+            
+            var sut = this.GetSystemUnderTest();
+
+            // act
+            var actual = sut.SaveMember(parameter);
+
+            // assert
+            actual.Should().BeFalse();
         }
     }
 }

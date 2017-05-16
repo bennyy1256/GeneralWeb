@@ -8,6 +8,7 @@ using General.Service.Interface;
 using FluentValidation;
 using General.Service.ParameterDto;
 using General.Service.Validation.Validators;
+using General.Service.Validation.Exceptions;
 
 namespace General.Service.Validation
 {
@@ -31,15 +32,15 @@ namespace General.Service.Validation
             var result = false;
             var validator = new MemberParameterDtoValidator();
 
-            validator.ValidateAndThrow(parameter);
+            //validator.ValidateAndThrow(parameter);
 
-            //var validateResult = validator.Validate(parameter);
+            var validateResult = validator.Validate(parameter);
 
-            //if (!validateResult.IsValid)
-            //{
-            //    // Throw Exception
-            //    validateResult.Errors
-            //}
+            if (!validateResult.IsValid)
+            {
+                // Throw CustomException
+                throw new ValidateException(validateResult.Errors);
+            }
 
             result = MemberService.SaveMember(parameter);
 
